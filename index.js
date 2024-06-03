@@ -26,9 +26,9 @@ app.use(methodOverride('_method'))
 
 const categories = ['fruit', 'vegetable', 'dairy'];
 
-function wrapAsync(fnc) {
+function wrapAsync(fn) {
     return function (req, res, next) {
-        fnc(req, res, next).catch(e => next(e))
+        fn(req, res, next).catch(e => next(e))
     }
 }
 
